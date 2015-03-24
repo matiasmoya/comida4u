@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  #username:
+  #password:
+
+development:
+  <<: *default
+  database: comida4u_dev
+
+test:
+  <<: *default
+  database: comida4u_test

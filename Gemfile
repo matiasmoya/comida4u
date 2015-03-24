@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 gem 'rails',        '4.1.0'
 
 #Plugins
+gem 'pg'
 gem "figaro"
 gem "paperclip",    '~> 4.2'
 gem 'jbuilder',     '~> 2.0'
@@ -34,7 +35,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0'
   gem 'quiet_assets'
   gem 'spring'
@@ -42,7 +42,6 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'thin'
   gem 'rails_12factor'
   gem 'rack-timeout'
