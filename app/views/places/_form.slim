@@ -1,0 +1,15 @@
+= form_for @place do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :street
+    = f.text_field :street
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.submit

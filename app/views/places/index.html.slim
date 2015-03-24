@@ -1,0 +1,10 @@
+h1 Comidas4u
+
+h3 Indice de comidas:
+
+.container
+  - @places.each do |place|
+    .place_row
+      p = place.name
+      p = place.address
+      p = link_to "More info", place
