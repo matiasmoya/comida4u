@@ -1,0 +1,12 @@
+h1 Admin: Categories
+
+.container
+  - categories.each do |category|
+    .category-row
+      p = category.name
+      p = link_to "Editar", edit_admin_category_path(category)
+      p = link_to "Eliminar", admin_category_path(category), method: :delete, data: { confirm: 'Estas seguro que deseas eliminar a ' + category.name + '?'}
+
+  = link_to "Crear un delivery", new_admin_category_path
+
+  = render 'form'

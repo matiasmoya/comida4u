@@ -1,0 +1,13 @@
+h1 Admin: Places
+
+.container
+  - places.each do |place|
+    .place-row
+      p = place.name
+      p = place.address
+      p = link_to "Editar", edit_admin_place_path(place)
+      p = link_to "Eliminar", admin_place_path(place), method: :delete, data: { confirm: 'Estas seguro que deseas eliminar a ' + place.name + '?'}
+
+  = link_to "Crear un delivery", new_admin_place_path
+
+  = render 'form'
