@@ -1,10 +1,16 @@
-h1 Comidas4u
+.l-places
+  h3 Indice de comidas:
 
-h3 Indice de comidas:
+  .container
+    - places.each do |place|
+      .place-row
+        p = place.name
+        p = place.address
+        p = link_to "More info", place
+        - if user_owns?(place)
+          p = link_to "Editar", edit_place_path(place)
 
-.container
-  - places.each do |place|
-    .place_row
-      p = place.name
-      p = place.address
-      p = link_to "More info", place
+  - if current_user
+    = link_to "Crear un delivery", new_place_path
+  - else
+    = link_to "Logueate para subir tu delivery", new_user_session_path

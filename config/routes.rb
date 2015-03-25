@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :places
 
-  root 'high_voltage/pages#show', :defaults => { :id => "home" }
+  root 'places#index'
 end

@@ -1,2 +1,22 @@
 @import "bourbon";
 @import "neat";
+//Base
+@import "base/constants";
+@import "base/base";
+
+//Modules
+@import "modules/header";
+
+//Layouts
+@import "layouts/l-places";
+
+//temp styles
+h1{
+  font-size: 3em;
+}
+h3{
+  font-size: 2em;
+}
+p, span{
+  font-size: 1.6em;
+}

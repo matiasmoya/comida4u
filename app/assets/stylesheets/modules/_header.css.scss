@@ -1,0 +1,85 @@
+.header{
+  display: block;
+  float: left;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  vertical-align: middle;
+  text-align: right;
+  background: #333;
+  color: #c9c9c9;
+  margin-bottom: 25px;
+  .alert-container{
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+
+    .notice{
+      position: relative;
+      opacity: 0.8;
+      color: $C_GREEN;
+      background: $C_GREEN_NOTICE;
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      height: 30px;
+      padding-top: 4px;
+      font-size: 1.7em;
+      border-radius: 0 0 5px 5px;
+      border: 1px solid $C_GREEN_BORDER;
+      border-top: 0;
+    }
+
+    .alert{
+      color: $C_RED;
+      background: $C_RED_ALERT;
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      height: 30px;
+      padding-top: 4px;
+      font-size: 1.7em;
+      border-radius: 0 0 5px 5px;
+      border: 1px solid $C_RED_BORDER;
+      border-top: 0;
+    }
+
+    .close-x{
+      position: absolute;
+      top: 1px;
+      right: 12px;
+      font-size: 21px;
+      font-weight: 400;
+      color: black;
+      opacity: .3;
+      cursor: pointer;
+    }
+    .close-x:hover{
+      opacity: 1;
+    }
+  }//alert-container
+
+  .logo{
+    float:left;
+    padding: 0 0 0 15px;
+    a{
+      color: #c9c9c9;
+      text-decoration: none;
+      font-size: 3em;
+      font-weight: bold;
+    }
+  }
+
+  .email, .logout, .login, .avatar{
+    display: inline;
+    float: right;
+    padding-left: 5px;
+    font-size: 1.5em;
+    a{
+      color: #999;
+    }
+  }
+}

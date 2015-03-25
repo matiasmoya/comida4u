@@ -1,0 +1,24 @@
+.header
+  - if notice
+    .alert-container
+      .notice
+        = notice
+        .close-x x
+
+  - if alert
+    .alert
+      = alert
+      .close-x x
+  .logo
+    = link_to "Comida4u", root_path
+
+  - if current_user
+    .logout
+      = link_to "Logout", destroy_user_session_path, method: :delete
+    .email
+      = current_user.email
+    .avatar
+      = image_tag current_user.avatar
+  - else
+    .login
+      = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
