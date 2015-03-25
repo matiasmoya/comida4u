@@ -10,6 +10,7 @@ gem 'sdoc',         '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'factory_girl_rails'
 gem 'ffaker'
+gem 'decent_exposure', '~> 2.3.2'
 
 # Engines
 gem 'devise'
