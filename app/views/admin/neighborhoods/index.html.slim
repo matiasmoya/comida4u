@@ -1,0 +1,12 @@
+h1 Admin: Barrios
+
+.container
+  - neighborhoods.each do |neighborhood|
+    .neighborhood-row
+      p = neighborhood.name
+      p = link_to "Editar", edit_admin_neighborhood_path(neighborhood)
+      p = link_to "Eliminar", admin_neighborhood_path(neighborhood), method: :delete, data: { confirm: 'Estas seguro que deseas eliminar a ' + neighborhood.name + '?'}
+
+  = link_to "Crear un nuevo barrio", new_admin_neighborhood_path
+
+  = render 'form'

@@ -12,7 +12,7 @@ class Admin::CategoriesController < Admin::BaseController
     if category.save
       redirect_to admin_categories_path, notice: "Categoria creada"
     else
-      redirect_to :new, alert: "No se creo la categoria"
+      render :new, alert: "No se creo la categoria"
     end
   end
 
@@ -20,15 +20,15 @@ class Admin::CategoriesController < Admin::BaseController
 
   def update
     if category.save
-      redirect_to category, notice: "Categoria editada"
+      redirect_to admin_categories_path, notice: "Categoria editada"
     else
-      redirect_to :edit, alert: "No se edito la categoria"
+      render :edit, alert: "No se edito la categoria"
     end
   end
 
   def destroy
     category.destroy
-    redirect_to admin_places_path, notice: "Categoria eliminada"
+    redirect_to admin_categories_path, notice: "Categoria eliminada"
   end
 
 private

@@ -5,10 +5,12 @@ Rails.application.routes.draw do
 
   # Admin routes
   namespace(:admin) do
-    get '/', to: 'places#index'
+    get '/', to: 'dashboard#index'
 
     resources :places
+    resources :users
     resources :categories
+    resources :neighborhoods
   end
 
   root 'places#index'

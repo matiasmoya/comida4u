@@ -12,7 +12,7 @@ class Admin::PlacesController < Admin::BaseController
     if place.save
       redirect_to admin_places_path, notice: "Delivery creado"
     else
-      redirect_to :new, alert: "No se creo el delivery"
+      render :new
     end
   end
 
@@ -20,9 +20,9 @@ class Admin::PlacesController < Admin::BaseController
 
   def update
     if place.save
-      redirect_to place, notice: "Delivery editado"
+      redirect_to admin_places_path, notice: "Delivery editado"
     else
-      redirect_to :edit, alert: "No se edito el delivery"
+      render :edit
     end
   end
 
@@ -33,6 +33,6 @@ class Admin::PlacesController < Admin::BaseController
 
 private
   def place_params
-    params.require(:place).permit(:name, :street, :city, :phone, :phone_b, :phone_c)
+    params.require(:place).permit(:name, :street, :city, :phone, :phone_b, :phone_c, :approved, :category_id, :neighborhood_id)
   end
 end
