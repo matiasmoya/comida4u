@@ -1,15 +1,27 @@
-= form_for place do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :street
-    = f.text_field :street
-  .field
-    = f.label :phone
-    = f.text_field :phone
-  .field
-    = f.submit
+= simple_form_for place do |f|
+
+  = f.input :name, label: "Nombre"
+  = f.association :category, label: "Categoria"
+  = f.association :neighborhood, label: "Barrio"
+  = f.input :city, label: "Ciudad"
+  = f.input :street, label: "Calle"
+  = f.input :phone, label: "Telefono"
+  = f.input :phone_b, label: "Telefono alt #1"
+  = f.input :phone_c, label: "Telefono alt #2"
+
+  #filelist
+
+  #container
+    a href="#" id="pickfiles" + Agrega una imagen al place
+    a href="#" id="uploadfiles" Upload
+
+  = f.button :submit
+
+javascript:
+  //plupload variables:
+  var multipart_params_data = {
+      '#{request_forgery_protection_token}': '#{form_authenticity_token}',
+      '#{Rails.application.config.session_options[:key]}': '#{request.session_options[:id]}',
+      'place_id': '#{place.id}'
+  };
+  var place_images_upload = '#{place_images_path}';

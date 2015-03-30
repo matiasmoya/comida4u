@@ -33,7 +33,7 @@ class PlacesController < ApplicationController
 
 private
   def place_params
-    params.require(:place).permit(:name, :street, :city, :phone, :phone_b, :phone_c)
+    params.require(:place).permit(:name, :street, :city, :phone, :phone_b, :phone_c, :category_id, :neighborhood_id)
   end
 
   def authenticate_user!
